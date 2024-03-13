@@ -1,9 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: ["./index.html"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "fraunces": ['Fraunces', 'serif']
+      }
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography'),],
 }
 

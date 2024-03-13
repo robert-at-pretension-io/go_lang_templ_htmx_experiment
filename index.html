@@ -5,41 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Tailwind CSS Example</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom text shadow class */
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-        }
+    <link rel="stylesheet" href="./dist/output.css">
 
-        .text-shadow-md {
-            text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.15);
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Roboto:wght@900&display=swap"
+        rel="stylesheet">
 
 </head>
 
 <body>
-    <div
-        class="sticky top-0 z-40 md:bg-gradient-to-b md:from-white md:to-amber-200 flex  rounded-md md:shadow-md md:py-4">
+    <div class="sticky top-0 z-40 bg-gradient-to-b from-white to-amber-200 flex  rounded-md md:shadow-md md:py-4">
         <!-- Use 'justify-between' for spacing and 'items-center' for vertical centering -->
         <div
-            class=" md:w-1/2 rounded-b-md text-white font-extrabold font-mono p-2 md:m-4 md:text-center hover:text-amber-200 hover:bg-white text-shadow  md:capitalize tracking-widest    shadow-md bg-amber-200 ">
+            class=" md:w-1/2 rounded-b-md text-white font-extrabold font-mono p-2 m-4 md:text-center hover:text-amber-400 hover:bg-white shadow-md hover:underline md:capitalize tracking-widest  bg-amber-300 ">
 
             How's
             it going
             today?
         </div>
         <div
-            class="md:w-1/2 rounded-b-md text-white font-extrabold font-mono p-2 md:m-4 md:text-center hover:opacity-70 md:capitalize tracking-widest    shadow-md bg-amber-200 ">
+            class=" md:w-1/2 rounded-b-md text-white font-extrabold font-mono p-2 m-4 md:text-center hover:text-amber-400 hover:bg-white shadow-md hover:underline md:capitalize tracking-widest  bg-amber-300 ">
+
+            How's
+            it going
+            today?
+        </div>
+        <div
+            class="md:w-1/2 rounded-b-md text-white font-extrabold font-mono p-2 m-4 md:text-center hover:text-amber-400 hover:bg-white shadow-md hover:underline md:capitalize tracking-widest  bg-amber-300">
             How's
             it going
             today?</div>
     </div>
-    <div class="h-[100vh]  to-orange-300 bg-gradient-to-t from-red-200 text-black justify-center items-center">
-        <p class="h-[150vh]"> hello there </p>
+
+    <div
+        class="grid grid-cols-1  gap-4 shadow-md outline-dotted items-center  to-orange-300 bg-gradient-to-t from-red-200 text-black ">
+        <div class="prose
+            h-[50vh]  bg-white m-4 p-4 opacity-85 rounded-3xl">
+
+            <h1 class="font-fraunces underline font-extrabold">Heading</h1>
+
+            <pre><code class="language-js">console.log('hello');
+console.log('hello');
+console.log('hello');</code></pre>
+            <blockquote class="prose">
+                <p>Blockquote</p>
+            </blockquote>
+        </div>
+        <div class="text-center  bg-slate-50 opacity-25 h-[20vh] w-11/12">2</div>
+
     </div>
-    <div class="top-0 h-[100vh] bg-gradient-to-b from-red-200 to-blue-200 text-black flex justify-center items-center">
+
+    <div class="h-[100vh] bg-gradient-to-b from-red-200 to-blue-200 text-black">
         <p class="h-[150vh]"> hello </p>
     </div>
 </body>
