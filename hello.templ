@@ -1,5 +1,15 @@
 package main
 
+type Message struct {
+	Content string
+	Role string
+	
+}
+
 templ hello(name string) {
 	<div>Hello, { name }</div>
+}
+
+templ error(err string) {
+	<div> Error </div>
 }
