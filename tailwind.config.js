@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "fraunces": ['Fraunces', 'serif']
+        "fraunces": ['Fraunces', 'serif'],
+        "playfair": ['Playfair Display', 'serif'],
+        "prata": ['Prata', 'serif']
       }
     },
   },
