@@ -38,7 +38,7 @@
 
         <div class="grid grid-cols-10 shadow-md to-orange-300 bg-gradient-to-t from-red-200 text-black w-full">
 
-            <div class="col-span-9 bg-white m-6 p-8 opacity-85 rounded-3xl md:p-14 ">
+            <div class="col-span-9 bg-white m-6  opacity-85 rounded-3xl md:p-14 p-8">
                 <div class="prose-xl">
                     <h2 class="font-fraunces underline">Human:</h1>
                         <p class="font-fraunces m-3 py-0">Can you explain the theory of relativity and
@@ -105,7 +105,7 @@
             </div>
 
 
-            <div class="col-span-9 bg-white mx-6 mb-6 p-8 opacity-85 rounded-3xl md:p-14 blur-sm">
+            <div class="col-span-9 bg-white mx-6 mb-6 p-8 opacity-85 rounded-3xl md:p-14 blur-sm bg-opacity-55">
                 <div class="prose-xl animate-pulse">
                     <h2 class="font-fraunces underline">Human:</h1>
                         <p class="font-fraunces m-3 py-0">
@@ -122,8 +122,8 @@
             </div>
 
 
-            <div class="col-end-11 col-span-9
-             bg-white mx-6 mb-6 p-8 opacity-85 rounded-3xl md:p-14 blur-sm">
+            <div class="col-end-11 col-span-9 bg-white
+              mx-6 mb-6 p-8 bg-opacity-55 rounded-3xl md:p-14 blur-sm">
                 <div class="prose-xl animate-pulse">
                     <h2 class="font-prata underline ">Response:</h2>
                     <div class="m-3">
@@ -163,13 +163,17 @@
 
     </div>
 
-    <div class="sticky bottom-0 z-40 bg-white h-auto w-full opacity-90 hover:opacity-100 rounded-t-lg">
+    <div
+        class="sticky bottom-0 z-40 h-auto  w-full rounded-t-lg bg-gradient-to-b from-blue-300 to-emerald-300 border-black    border-t-4">
         <!-- Contains the input form for chatting -->
         <div class="flex flex-row">
-            <textarea class="flex-grow p-3 resize-none border rounded-md overflow-hidden" rows="1"
-                placeholder="Type your message here"
+            <textarea
+                class="font-fraunces prose-xl flex-grow resize-none  rounded-tl-lg rounded-bl-lg   md:overflow-hidden m-6 min-h-[30vh] bg-white bg-opacity-100 mr-0 focus:border-orange-300 focus:outline-orange-300 md:p-17 p-11 "
+                rows="1" placeholder="Type your message here"
                 oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'"></textarea>
-            <button class="float-right flex-grow-0 p-3 m-3 md:p-4 md:m-4 md:w-1/4 w-3/16 bg-slate-50"> Submit </button>
+            <button
+                class="p-2 m-6 md:p-4 md:w-1/5 min-w-fit bg-slate-50 rounded-tr-lg rounded-br-lg ml-0 active:none opacity-50 hover:opacity-80 active:opacity-85 hover:animate-pulse">
+                Submit </button>
         </div>
 
     </div>
