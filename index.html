@@ -17,8 +17,9 @@
 
 <body>
     <div>
+        <!-- In order to make the nav bar visible, add the following class: md:max-h-fit md:py-4 md:flex md:justify-around  -->
         <div
-            class="md:sticky md:top-0 max-h-0 overflow-hidden z-40  bg-gradient-to-b from-white to-amber-200 rounded-md shadow-md md:py-4 md:flex md:justify-around md:max-h-fit">
+            class="md:sticky md:top-0 max-h-0 overflow-hidden z-40  bg-gradient-to-b from-white to-amber-200 rounded-md shadow-md ">
 
             <div
                 class=" md:w-1/4 rounded-b-md text-white font-extrabold font-mono p-2 m-4 text-center hover:text-amber-400 hover:bg-white shadow-md hover:underline md:capitalize tracking-widest  bg-amber-300 s">
@@ -56,7 +57,7 @@ console.log('hello');</code></pre>
             </div>
 
             <div class="col-end-11 col-span-9
-             bg-white mx-4 p-8 opacity-85 rounded-3xl md:p-14">
+             bg-white mx-6 mb-6 p-8 opacity-85 rounded-3xl md:p-14">
                 <div class="prose-xl">
                     <h2 class="font-prata underline ">Response:</h2>
                     <div class="m-3">
@@ -119,27 +120,31 @@ console.log('hello');</code></pre>
                 </div>
             </div>
 
-            <div class="col-span-9 bg-white m-4 p-8 opacity-85 rounded-3xl md:p-14">
-                <div class="prose">
-                    <h2 class="font-fraunces underline font-extrabold">Third</h2>
 
-                    <pre><code>console.log('hello');
-console.log('hello');
-console.log('hello');</code></pre>
-                    <blockquote>
-                        <p>Blockquote</p>
-                    </blockquote>
-                </div>
-            </div>
 
+        </div>
+
+
+    </div>
+
+    <div class="sticky bottom-0 z-40 bg-white h-auto w-full opacity-85 hover:opacity-100 ">
+        <!-- Contains the input form for chatting -->
+        <div class="flex flex-row">
+            <input type="text" class="flex-grow p-3 m-3  md:p-4 md:m-4 rounded-md "
+                placeholder="Type your message here">
+            <button class="float-right flex-grow-0 p-3 m-3 md:p-4 md:m-4 md:w-1/4 w-3/16 bg-slate-50"> Submit </button>
         </div>
 
     </div>
     <!-- End the sticky div here -->
 
-    <div class="h-[100vh] bg-gradient-to-b from-red-200 to-blue-200 text-black">
-        <p class="h-[150vh]"></p>
+    <!-- <div class=" h-[100vh] bg-gradient-to-b from-red-200 to-blue-200 text-black">
+                    <p class="h-[150vh]"></p>
+            </div> -->
+    <div>
+
     </div>
+
 </body>
 
 </html>
