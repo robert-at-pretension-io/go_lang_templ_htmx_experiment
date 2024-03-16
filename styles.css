@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.htmx-indicator {
+    @apply max-h-0 overflow-hidden invisible;
+}
+
+.htmx-request .htmx-indicator {
+    @apply max-h-fit overflow-visible;
+}
+
+.htmx-request.htmx-indicator {
+    @apply max-h-fit overflow-visible;
+}

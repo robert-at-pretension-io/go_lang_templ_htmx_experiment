@@ -2,28 +2,31 @@
 <html lang="en">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Local Tailwind CSS Example</title>
-        <link rel="stylesheet" href="./dist/output.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="./dist/output.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Prata&family=Roboto:wght@100;900&display=swap"
-            rel="stylesheet">
+            rel="stylesheet" />
+        <script src="https://unpkg.com/htmx.org@1.9.10"
+            integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+            crossorigin="anonymous"></script>
 
     </head>
 
     <body>
         <div>
 
-            <div
+            <div id="chat"
                 class="grid grid-cols-10 shadow-md to-orange-300 bg-gradient-to-t from-red-200 text-black w-full">
 
                 <div
                     class="col-span-9 bg-white m-6  opacity-85 rounded-3xl md:p-14 p-8">
                     <div class="prose-xl">
-                        <h2 class="font-fraunces underline">Human:</h1>
+                        <h2 class="font-fraunces underline">Human:</h2>
                         <p class="font-fraunces m-3 py-0">Can you explain the
                             theory of relativity and
                             its
@@ -118,7 +121,7 @@
                 <div
                     class="col-span-9 bg-white mx-6 mb-6 p-8 opacity-85 rounded-3xl md:p-14 blur-sm bg-opacity-55">
                     <div class="prose-xl animate-pulse">
-                        <h2 class="font-fraunces underline">Human:</h1>
+                        <h2 class="font-fraunces underline">Human:</h2>
                         <p class="font-fraunces m-3 py-0">
                             "Is it wrong to kill a robot that can think and feel?"
                             "What does it mean to be human?"
@@ -133,21 +136,28 @@
                 </div>
 
                 <div class="col-end-11 col-span-9 bg-white
-              mx-6 mb-6 p-8 bg-opacity-55 rounded-3xl md:p-14 blur-sm">
+mx-6 mb-6 p-8 bg-opacity-55 rounded-3xl md:p-14 blur-sm">
                     <div class="prose-xl animate-pulse">
                         <h2 class="font-prata underline ">Response:</h2>
                         <div class="m-3">
-                            <p class="font-prata">These questions delve into the
+                            <p class="font-prata">These questions delve into
+                                the
                                 complex interplay between artificial
                                 intelligence and human values, highlighting
-                                ethical dilemmas about consciousness, rights,
-                                and our evolving relationship with technology.
-                                They challenge us to reconsider what it means
+                                ethical dilemmas about consciousness,
+                                rights,
+                                and our evolving relationship with
+                                technology.
+                                They challenge us to reconsider what it
+                                means
                                 to be human in an era where the boundaries
                                 between biological and artificial life are
-                                increasingly blurred. As technology advances,
-                                these questions become not just philosophical,
-                                but practical, urging a reevaluation of laws,
+                                increasingly blurred. As technology
+                                advances,
+                                these questions become not just
+                                philosophical,
+                                but practical, urging a reevaluation of
+                                laws,
                                 ethics, and the essence of empathy and
                                 creativity.</p>
                         </div>
@@ -166,7 +176,10 @@
                     class="font-fraunces flex-grow resize-none  rounded-tl-lg rounded-bl-lg   md:overflow-hidden m-6 min-h-[30vh] bg-white bg-opacity-100 mr-0 focus:border-orange-300 focus:outline-orange-300 md:p-17 p-11 "
                     rows="1" placeholder="Type your message here"
                     oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'"></textarea>
-                <button
+                <button hx-get="http://127.0.0.1:8080/delayed_return"
+                    hx-trigger="click"
+                    hx-indicator="#loading"
+                    hx-target="#loading"
                     class="p-2 m-6 md:p-4 md:w-1/5 min-w-fit bg-slate-50 rounded-tr-lg rounded-br-lg ml-0 active:none opacity-50 hover:opacity-80 active:opacity-85 hover:animate-pulse">
                     Submit </button>
             </div>
