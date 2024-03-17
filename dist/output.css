@@ -1540,12 +1540,24 @@ video {
   margin-bottom: 0;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
 .sticky {
   position: sticky;
 }
 
 .bottom-0 {
   bottom: 0px;
+}
+
+.right-0 {
+  right: 0px;
 }
 
 .z-40 {
@@ -1560,8 +1572,24 @@ video {
   grid-column: span 9 / span 9;
 }
 
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
+
+.col-span-5 {
+  grid-column: span 5 / span 5;
+}
+
 .col-start-2 {
   grid-column-start: 2;
+}
+
+.col-start-3 {
+  grid-column-start: 3;
 }
 
 .col-end-11 {
@@ -1595,6 +1623,11 @@ video {
 .mx-6 {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .mb-6 {
@@ -1717,12 +1750,28 @@ video {
   grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
 .grid-rows-3 {
   grid-template-rows: repeat(3, minmax(0, 1fr));
 }
 
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
 .flex-row {
   flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .rounded-3xl {
@@ -1835,9 +1884,23 @@ video {
   padding: 1rem;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .text-center {
@@ -1854,6 +1917,22 @@ video {
 
 .font-prata {
   font-family: Prata, serif;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em;
 }
 
 .text-black {
@@ -1975,6 +2054,16 @@ video {
     grid-column-start: 2;
   }
 
+  .md\:my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .md\:my-16 {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
   .md\:w-1\/5 {
     width: 20%;
   }
@@ -2000,12 +2089,21 @@ video {
     border-left-width: 0px;
   }
 
+  .md\:border-t-4 {
+    border-top-width: 4px;
+  }
+
   .md\:p-14 {
     padding: 3.5rem;
   }
 
   .md\:p-4 {
     padding: 1rem;
+  }
+
+  .md\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .md\:text-center {

@@ -24,15 +24,21 @@
                 class="grid grid-cols-8 grid-rows-3 to-orange-300 bg-gradient-to-t from-red-200 text-black w-full h-[100vh]">
 
                 <div
-                    class="col-span-2 row-span-1 row-start-2 col-start-2
+                    class="col-span-5 row-span-1 row-start-2 col-start-2
                     
                     md:col-start-3 md:col-span-4
-                    m-4  p-4 md:text-center font-fraunces prose min-w-1.5 border-l-4 md:border-t-8 md:border-b-8 md:border-l-0 border-white">
+                    m-4  p-4 text-center font-fraunces prose min-w-1.5 border-l-4 md:border-t-4 md:border-l-0 border-white w-full ">
                     <h1>Login</h1>
                 
-                    <form class="">
+                    <form class="grid-rows-2 grid-cols-1 col-span-3 ">
                        
-                            <input type="text" id="phone"  class="active:outline-none text-center"></input>
+                            <input type="text" id="phone"  placeholder="cellphone" class="active:outline-none text-center
+                            flex-col w-full tracking-widest "></input>
+
+
+                            <button class="my-2  px-4 bg-white text-center w-full lowercase prose font-extrabold">
+                                <b>Submit </b> 
+                            </button>
                         
                     
                     </form>
