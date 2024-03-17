@@ -169,7 +169,7 @@ mx-6 mb-6 p-8 bg-opacity-55 rounded-3xl md:p-14 blur-sm">
 
         </div>
 
-        <div
+        <form id="activated-chat-button"
             class="sticky bottom-0 z-40 h-auto  w-full rounded-t-lg bg-gradient-to-b from-blue-300 to-emerald-300 border-black    border-t-4">
             <div class="flex flex-row">
                 <textarea
@@ -178,14 +178,26 @@ mx-6 mb-6 p-8 bg-opacity-55 rounded-3xl md:p-14 blur-sm">
                     oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'"></textarea>
                 <button hx-get="http://127.0.0.1:8080/delayed_return"
                     hx-trigger="click"
-                    hx-indicator="#loading"
                     hx-target="#loading"
-                    class="p-2 m-6 md:p-4 md:w-1/5 min-w-fit bg-slate-50 rounded-tr-lg rounded-br-lg ml-0 active:none opacity-50 hover:opacity-80 active:opacity-85 hover:animate-pulse">
+                    class="p-2 m-6 md:p-4 md:w-1/5 min-w-fit bg-slate-50 rounded-tr-lg rounded-br-lg ml-0 active:none opacity-50 ">
                     Submit </button>
             </div>
 
-        </div>
-        <div>
+        </form>
+
+        <div id="deactivated-submit-button"
+            class="sticky bottom-0 z-40 h-auto  w-full rounded-t-lg bg-gradient-to-b from-blue-300 to-emerald-300 border-black    border-t-4">
+            <div class="flex flex-row">
+                <textarea
+                    class="font-fraunces flex-grow resize-none  rounded-tl-lg rounded-bl-lg   md:overflow-hidden m-6 min-h-[30vh] bg-white bg-opacity-100 mr-0 focus:border-orange-300 focus:outline-orange-300 md:p-17 p-11 "
+                    rows="1" placeholder="Type your message here"
+                    oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'"></textarea>
+                <button hx-get="http://127.0.0.1:8080/delayed_return"
+                    hx-trigger="click"
+                    hx-target="#loading"
+                    class="p-2 m-6 md:p-4 md:w-1/5 min-w-fit rounded-tr-lg rounded-br-lg ml-0 active:none opacity-50 hover:opacity-80 active:opacity-85 hover:animate-pulse line-through bg-gray-800 cursor-not-allowed ">
+                    Submit </button>
+            </div>
 
         </div>
 
