@@ -114,8 +114,8 @@ func main() {
 
 		http.SetCookie(w, cookie)
 
-		component := reload_page()
-		component.Render(r.Context(), w)
+		fmt.Fprintf(w, "<div>Standin div till I can get it together</div>")
+
 	})
 
 	fmt.Println("Server starting on port 8080...")

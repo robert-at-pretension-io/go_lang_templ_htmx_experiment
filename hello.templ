@@ -234,15 +234,6 @@ templ chat_page() {
 }
 
 
-templ reload_page() {
-
-	<script>
-    document.body.addEventListener('htmx:afterOnLoad', function(event) {
-        // Reload the page
-        window.location.reload();
-    });
-</script>
-}
 
 templ header() {
 		<head>
