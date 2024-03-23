@@ -217,6 +217,34 @@ templ chat_input() {
 templ chat_page() {
 	<!DOCTYPE html>
 	<html lang="en">
+
+	@header()
+
+		<body>
+			<div>
+				<div
+					id="chat"
+					class="grid grid-cols-10 shadow-md to-orange-300 bg-gradient-to-t from-red-200 text-black w-full"
+				>
+				</div>
+			</div>
+			@chat_input()
+		</body>
+	</html>
+}
+
+
+templ reload_page() {
+
+	<script>
+    document.body.addEventListener('htmx:afterOnLoad', function(event) {
+        // Reload the page
+        window.location.reload();
+    });
+</script>
+}
+
+templ header() {
 		<head>
 			<meta charset="UTF-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -230,15 +258,51 @@ templ chat_page() {
 			/>
 			<script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
 		</head>
-		<body>
-			<div>
-				<div
-					id="chat"
-					class="grid grid-cols-10 shadow-md to-orange-300 bg-gradient-to-t from-red-200 text-black w-full"
-				>
-				</div>
-			</div>
-			@chat_input()
-		</body>
-	</html>
+}
+
+
+templ login() {
+	<!DOCTYPE html>
+<html lang="en">
+
+	@header()
+
+    <body>
+        <div id="login_container">
+            <div id="login"
+                class="grid grid-cols-8 grid-rows-3 to-orange-300 bg-gradient-to-t from-red-200 text-black w-full h-[100vh]">
+
+                <div
+                    class="col-span-5 row-span-1 row-start-2 col-start-2
+                    
+                    md:col-start-3 md:col-span-4
+                    m-4  p-4 text-center font-fraunces prose min-w-1.5 border-l-4 md:border-t-4 md:border-l-0 border-white w-full ">
+                    <h1>Login</h1>
+                
+                    <form class="grid-rows-2 grid-cols-1 col-span-3 ">
+                       
+                            <input type="text" id="phone" name="phone_number"  placeholder="cellphone" class="active:outline-none text-center
+                            flex-col w-full tracking-widest "></input>
+
+
+                            <button hx-post="/login" 
+								hx-target="#login_container"
+								hx-swap="outerHTML"
+
+							class="my-2  px-4 bg-white text-center w-full lowercase prose font-extrabold">
+                                <b>Submit</b> 
+                            </button>
+                        
+                    
+                    </form>
+                
+                </div>
+                
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
 }
