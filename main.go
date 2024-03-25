@@ -56,7 +56,7 @@ func main() {
 					// Cookie not found, handle accordingly
 					fmt.Printf("Cookie is not set.")
 
-					component := login()
+					component := login_page()
 					component.Render(r.Context(), w)
 					// Optionally, you can set the cookie here if it's necessary
 				} else {
@@ -114,7 +114,7 @@ func main() {
 
 		http.SetCookie(w, cookie)
 
-		fmt.Fprintf(w, "<div>Standin div till I can get it together</div>")
+		chat_body().Render(r.Context(), w)
 
 	})
 

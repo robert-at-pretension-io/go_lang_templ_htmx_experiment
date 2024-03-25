@@ -114,12 +114,10 @@ templ bot_entry() {
 	</div>
 }
 
-templ user_input_submitted( prompt string) {
-    @user_entry( prompt )
-
-    @loading_bot_entry()
-
-    @deactivated_chat_button()
+templ user_input_submitted(prompt string) {
+	@user_entry(prompt)
+	@loading_bot_entry()
+	@deactivated_chat_button()
 }
 
 templ loading_user_entry() {
@@ -177,7 +175,8 @@ mx-6 mb-6 p-8 bg-opacity-55 rounded-3xl md:p-14 blur-sm"
 }
 
 templ activated_button() {
-	<button id="chat_button"
+	<button
+		id="chat_button"
 		hx-post="/submit_chat"
 		hx-trigger="click"
 		hx-target="#chat"
@@ -189,8 +188,9 @@ templ activated_button() {
 }
 
 templ deactivated_chat_button() {
-	<button id="chat_button" 
-        hx-swap-oob="true"
+	<button
+		id="chat_button"
+		hx-swap-oob="true"
 		class="p-2 m-6 md:p-4 md:w-1/5 min-w-fit rounded-tr-lg rounded-br-lg ml-0 active:none opacity-50 hover:opacity-80 active:opacity-85 hover:animate-pulse line-through bg-gray-800 cursor-not-allowed "
 	>
 		Submit 
@@ -205,95 +205,97 @@ templ chat_input() {
 			<textarea
 				class="font-fraunces flex-grow resize-none  rounded-tl-lg rounded-bl-lg   md:overflow-hidden m-6 min-h-[20vh] bg-white bg-opacity-100 mr-0 focus:border-orange-300 focus:outline-orange-300 md:p-17 p-11 "
 				rows="1"
-                name="user_prompt"
+				name="user_prompt"
 				placeholder="Type your message here"
 				oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'"
 			></textarea>
-            @activated_button()
+			@activated_button()
 		</div>
 	</form>
 }
 
-templ chat_page() {
-	<!DOCTYPE html>
-	<html lang="en">
-
-	@header()
-
-		<body>
-			<div>
-				<div
-					id="chat"
-					class="grid grid-cols-10 shadow-md to-orange-300 bg-gradient-to-t from-red-200 text-black w-full"
-				>
-				</div>
-			</div>
-			@chat_input()
-		</body>
-	</html>
+templ chat_body() {
+	<div id="chat_id_container">
+		<div>
+			<div
+				id="chat"
+				class="grid grid-cols-10 shadow-md to-orange-300 bg-gradient-to-t from-red-200 text-black w-full"
+			></div>
+		</div>
+		@chat_input()
+	</div>
 }
 
-
+templ chat_page() {
+	@html_container() {
+		@chat_body()
+	}
+}
 
 templ header() {
-		<head>
-			<meta charset="UTF-8"/>
-			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-			<title>Local Tailwind CSS Example</title>
-			<link rel="stylesheet" href="./dist/output.css"/>
-			<link rel="preconnect" href="https://fonts.googleapis.com"/>
-			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-			<link
-				href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Prata&family=Roboto:wght@100;900&display=swap"
-				rel="stylesheet"
-			/>
-			<script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
-		</head>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Local Tailwind CSS Example</title>
+		<link rel="stylesheet" href="./dist/output.css"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com"/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Prata&family=Roboto:wght@100;900&display=swap"
+			rel="stylesheet"
+		/>
+		<script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+	</head>
 }
 
-
-templ login() {
-	<!DOCTYPE html>
-<html lang="en">
-
-	@header()
-
-    <body>
-        <div id="login_container">
-            <div id="login"
-                class="grid grid-cols-8 grid-rows-3 to-orange-300 bg-gradient-to-t from-red-200 text-black w-full h-[100vh]">
-
-                <div
-                    class="col-span-5 row-span-1 row-start-2 col-start-2
+templ login_body() {
+	<div id="login_container">
+		<div
+			id="login"
+			class="grid grid-cols-8 grid-rows-3 to-orange-300 bg-gradient-to-t from-red-200 text-black w-full h-[100vh]"
+		>
+			<div
+				class="col-span-5 row-span-1 row-start-2 col-start-2
                     
                     md:col-start-3 md:col-span-4
-                    m-4  p-4 text-center font-fraunces prose min-w-1.5 border-l-4 md:border-t-4 md:border-l-0 border-white w-full ">
-                    <h1>Login</h1>
-                
-                    <form class="grid-rows-2 grid-cols-1 col-span-3 ">
-                       
-                            <input type="text" id="phone" name="phone_number"  placeholder="cellphone" class="active:outline-none text-center
-                            flex-col w-full tracking-widest "></input>
+                    m-4  p-4 text-center font-fraunces prose min-w-1.5 border-l-4 md:border-t-4 md:border-l-0 border-white w-full "
+			>
+				<h1>Login</h1>
+				<form class="grid-rows-2 grid-cols-1 col-span-3 ">
+					<input
+						type="text"
+						id="phone"
+						name="phone_number"
+						placeholder="cellphone"
+						class="active:outline-none text-center
+                            flex-col w-full tracking-widest "
+					/>
+					<button
+						hx-post="/login"
+						hx-target="#login_container"
+						hx-swap="outerHTML"
+						class="my-2  px-4 bg-white text-center w-full lowercase prose font-extrabold"
+					>
+						<b>Submit</b>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+}
 
+templ login_page() {
+	@html_container() {
+		@login_body()
+	}
+}
 
-                            <button hx-post="/login" 
-								hx-target="#login_container"
-								hx-swap="outerHTML"
-
-							class="my-2  px-4 bg-white text-center w-full lowercase prose font-extrabold">
-                                <b>Submit</b> 
-                            </button>
-                        
-                    
-                    </form>
-                
-                </div>
-                
-            </div>
-
-        </div>
-
-    </body>
-
-</html>
+templ html_container() {
+	<!DOCTYPE html>
+	<html lang="en">
+		@header()
+		<body>
+			{ children... }
+		</body>
+	</html>
 }
