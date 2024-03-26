@@ -2,11 +2,35 @@ package main
 
 import (
 	"fmt"
+	"github.com/go-redis/redis/v8" // Import the Redis package
 	"net/http"
 	"os"
-
 	"time"
 )
+
+// Conversation represents a single message in the conversation,
+// including the role of the sender and the content of the message.
+type Conversation struct {
+	Role    string // Role can be "user", "bot", etc., depending on your application's needs.
+	Content string // Content stores the text of the message.
+}
+
+// ConversationHistory holds a list of conversations.
+type ConversationHistory struct {
+	Conversations []Conversation
+}
+
+// AddConversation adds a new conversation to the history.
+func (ch *ConversationHistory) AddConversation(convo Conversation) {
+	ch.Conversations = append(ch.Conversations, convo)
+}
+
+// PrintConversations prints all conversations in the history.
+func (ch *ConversationHistory) PrintConversations() {
+	for i, convo := range ch.Conversations {
+		fmt.Printf("%d: [%s] %s\n", i, convo.Role, convo.Content)
+	}
+}
 
 func getUsername(w http.ResponseWriter, r *http.Request) (string, error) {
 	if r.Method != "POST" {
